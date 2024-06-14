@@ -9,7 +9,7 @@ using System;
 
 namespace Shop.Server.Endpoints.Customer.GetAll
 {
-    public class Handler(ISender mediator) : Endpoint<Request, Response>
+    public class Handler(ISender mediator) : Endpoint<EmptyRequest, Response>
     {
         public override void Configure()
         {
@@ -17,7 +17,7 @@ namespace Shop.Server.Endpoints.Customer.GetAll
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync(Request request, CancellationToken cancellationToken)
+        public override async Task HandleAsync(EmptyRequest request, CancellationToken cancellationToken)
         {
             ServiceResponse<IEnumerable<CustomerDTO>> result;
             try
