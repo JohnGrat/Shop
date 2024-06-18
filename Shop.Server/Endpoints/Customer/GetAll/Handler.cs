@@ -9,7 +9,7 @@ using System;
 
 namespace Shop.Server.Endpoints.Customer.GetAll
 {
-    public class Handler(ISender mediator) : Endpoint<EmptyRequest, Response>
+    public class Handler(ISender mediator) : Endpoint<EmptyRequest, ServiceResponse<IEnumerable<CustomerDTO>>>
     {
         public override void Configure()
         {
@@ -37,8 +37,7 @@ namespace Shop.Server.Endpoints.Customer.GetAll
                     IsSuccess = false
                 };
             }
-            var response = new Response(result);
-            await SendAsync(response);
+            await SendAsync(result);
         }
     }
 }

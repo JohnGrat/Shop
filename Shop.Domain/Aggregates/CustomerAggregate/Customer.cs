@@ -23,7 +23,7 @@ namespace Shop.Domain.Aggregates.CustomerAggregate
 
         public void Change(string name)
         {
-            ApplyChange(new CustomerChangedEvent(Id, name));
+            ApplyChange(new CustomerUpdatedEvent(Id, name));
         }
 
 
@@ -35,7 +35,7 @@ namespace Shop.Domain.Aggregates.CustomerAggregate
                     Id = e.Id;
                     Name = e.Name;
                     break;
-                case CustomerChangedEvent e:
+                case CustomerUpdatedEvent e:
                     Name = e.Name;
                     break;
             }

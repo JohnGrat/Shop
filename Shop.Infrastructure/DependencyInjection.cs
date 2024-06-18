@@ -17,8 +17,8 @@ namespace Shop.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             
-            services.AddSingleton<SqlDbContext>();
-            services.AddSingleton<ISqlDbRepository, SqlDbRepository>();
+            services.AddTransient<SqlDbContext>();
+            services.AddTransient<ISqlDbRepository, SqlDbRepository>();
 
             var eventStoreConnectionString = configuration.GetRequiredSection(AppSettingConstants.DatabaseSettings)[AppSettingConstants.EventStoreConnectionString];
             services.AddEventStoreClient(eventStoreConnectionString);

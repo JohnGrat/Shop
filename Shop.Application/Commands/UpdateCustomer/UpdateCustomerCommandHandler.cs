@@ -1,16 +1,18 @@
 ﻿using MediatR;
+using Shop.Application.Commands.CreateCustomer;
 using Shop.Domain.Aggregates.CustomerAggregate;
 using Shop.Domain.Dispatchers.Interfaces;
 using Shop.Domain.Repositories.Interfaces;
 
-namespace Shop.Application.Commands.CreateCustomer
+
+namespace Shop.Application.Commands.UpdateCustomer
 {
-    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand>
+    public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand>
     {
         private readonly IDomainEventDispatcher _domainEventDispatcher;
         private readonly IEventStoreRepository _eventStoreRepository;
 
-        public CreateCustomerCommandHandler(
+        public UpdateCustomerCommandHandler(
             IDomainEventDispatcher domainEventDispatcher,
             IEventStoreRepository eventStoreRepository)
         {
@@ -18,10 +20,10 @@ namespace Shop.Application.Commands.CreateCustomer
             _eventStoreRepository = eventStoreRepository;
         }
 
-        public async Task Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
-            var customer = new Customer(request.Id, request.Name);
-
+            var customer = await _eventStoreRepository.LoadAsync<Customer>(request.Id);
+            customer.Change(request.Name);
             await _eventStoreRepository.SaveAsync(customer);
             await _domainEventDispatcher.DispatchEventsAsync(customer);
         }
