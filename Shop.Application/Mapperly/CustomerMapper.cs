@@ -8,7 +8,8 @@ using Shop.Shared.DTOs;
 public static partial class CustomerMapper
 {
     public static partial CustomerDTO ToDTO(CustomerReadModel customer);
+    public static partial CustomerDTO ToDTO(CreateCustomerCommand customer);
     public static partial CustomerReadModel ToDTO(CustomerDTO customer);
     public static partial CustomerReadModel ToDTO(CustomerCreatedEvent customer);
-    public static partial CustomerDTO ToDTO(CreateCustomerCommand customer);
+    public static partial CustomerReadModel ToDTO(CustomerUpdatedEvent customer);
 }
