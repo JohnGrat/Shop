@@ -6,7 +6,7 @@ using Shop.Domain.Dispatchers.Interfaces;
 using Shop.Domain.Repositories.Interfaces;
 using Xunit;
 
-namespace Shop.Tests.Application.Commands.CreateCustomer
+namespace Shop.Tests.Application.Commands
 {
     public class CreateCustomerCommandTest
     {
