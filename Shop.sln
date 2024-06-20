@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Server", "Shop.Server\Shop.Server.csproj", "{FE76891C-B174-4B8A-81A4-83CA1005EC8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Server", "Shop.Server\Shop.Server.csproj", "{FE76891C-B174-4B8A-81A4-83CA1005EC8E}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Shop.Client", "Shop.Client\Shop.Client.esproj", "{43127497-0D66-4378-9D5C-78655AAEB1DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Infrastructure", "Shop.Infrastructure\Shop.Infrastructure.csproj", "{8D72E234-E13A-43DE-8A21-62859E462C3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Infrastructure", "Shop.Infrastructure\Shop.Infrastructure.csproj", "{8D72E234-E13A-43DE-8A21-62859E462C3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{A173DD03-5D5E-4169-AC37-8939C825D3E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{A173DD03-5D5E-4169-AC37-8939C825D3E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Shared", "Shop.Shared\Shop.Shared.csproj", "{E1BD615F-521B-4656-B37F-28CEFAB570C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Shared", "Shop.Shared\Shop.Shared.csproj", "{E1BD615F-521B-4656-B37F-28CEFAB570C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{92F23902-BC59-44EA-9697-E5FD81DCB721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{92F23902-BC59-44EA-9697-E5FD81DCB721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Tests", "Shop.Tests\Shop.Tests.csproj", "{700A71DC-C4B3-4B61-A17D-9BB8018DBB8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{92F23902-BC59-44EA-9697-E5FD81DCB721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92F23902-BC59-44EA-9697-E5FD81DCB721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92F23902-BC59-44EA-9697-E5FD81DCB721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{700A71DC-C4B3-4B61-A17D-9BB8018DBB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{700A71DC-C4B3-4B61-A17D-9BB8018DBB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{700A71DC-C4B3-4B61-A17D-9BB8018DBB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{700A71DC-C4B3-4B61-A17D-9BB8018DBB8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
