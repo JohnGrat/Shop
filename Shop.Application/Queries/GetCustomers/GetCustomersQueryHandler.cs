@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Shop.Application.Mapperly;
 using Shop.Application.ReadModels;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Shared.DTOs;
