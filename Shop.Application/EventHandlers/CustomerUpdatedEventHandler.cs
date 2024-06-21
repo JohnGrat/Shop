@@ -1,13 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.ReadModels;
+using Shop.Application.Mapperly;
 using Shop.Domain.Events;
 using Shop.Domain.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Shop.Application.EventHandlers
 {
     public class CustomerUpdatedEventHandler : INotificationHandler<CustomerUpdatedEvent>
