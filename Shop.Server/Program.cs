@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddFastEndpoints()
    .SwaggerDocument();
 
+
 var app = builder.Build();
 
 await app.Services.GetRequiredService<IEventStoreRepository>().ReplayAsync();
