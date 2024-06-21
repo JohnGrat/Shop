@@ -1,7 +1,7 @@
 ﻿using FastEndpoints;
 using MediatR;
 using Shop.Application.Commands.CreateCustomer;
-using Shop.Application.Queries.GetCustomers;
+using Shop.Application.Mapperly;
 using Shop.Server.DataTransferContracts;
 using Shop.Shared.DTOs;
 
