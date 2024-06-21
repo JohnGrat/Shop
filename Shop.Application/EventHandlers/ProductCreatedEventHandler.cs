@@ -5,20 +5,20 @@ using Shop.Domain.Repositories.Interfaces;
 
 namespace Shop.Application.EventHandlers
 {
-    public class CustomerCreatedEventHandler : INotificationHandler<CustomerCreatedEvent>
+    public class ProductCreatedEventHandler : INotificationHandler<ProductCreatedEvent>
     {
         private readonly ISqlDbRepository _sqlDbRepository;
 
-        public CustomerCreatedEventHandler(
+        public ProductCreatedEventHandler(
             ISqlDbRepository sqlDbRepository)
         {
             _sqlDbRepository = sqlDbRepository;
         }
 
-        public async Task Handle(CustomerCreatedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(ProductCreatedEvent notification, CancellationToken cancellationToken)
         {
-            var customerRm = CustomerMapper.ToDTO(notification);
-            await _sqlDbRepository.InsertAsync(customerRm);
+            var productRm = ProductMapper.ToDTO(notification);
+            await _sqlDbRepository.InsertAsync(productRm);
         }
     }
 }
