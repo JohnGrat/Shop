@@ -1,40 +1,36 @@
 ﻿using FastEndpoints;
 using MediatR;
-using Shop.Application.Commands.CreateCustomer;
-using Shop.Application.Mapperly;
+using Shop.Application.Commands.UpdateProduct;
 using Shop.Server.DataTransferContracts;
-using Shop.Shared.DTOs;
 
-
-namespace Shop.Server.Endpoints.Customer.Create
+namespace Shop.Server.Endpoints.Product.Update
 {
-    public class Handler(ISender mediator) : Endpoint<Request, ServiceResponse<CustomerDTO>>
+    public class Handler(ISender mediator) : Endpoint<Request, ServiceResponse<EmptyResponse>>
     {
 
         public override void Configure()
         {
-            Post("/api/v1/customers");
+            Put("/api/v1/products/{id}");
             AllowAnonymous();
         }
 
         public override async Task HandleAsync(Request request,
             CancellationToken cancellationToken)
         {
-            ServiceResponse<CustomerDTO> result;
+            ServiceResponse<EmptyResponse> result;
             try
             {
-                var cmd = new CreateCustomerCommand(Guid.NewGuid(), request.Name);
+                var cmd = new UpdateProductCommand(request.Id, request.Name, request.Price);
                 await mediator.Send(cmd);
 
-                result = new ServiceResponse<CustomerDTO>
+                result = new ServiceResponse<EmptyResponse>
                 {
-                    Data = CustomerMapper.ToDTO(cmd),
                     IsSuccess = true
                 };
             }
             catch (Exception ex)
             {
-                result = new ServiceResponse<CustomerDTO>
+                result = new ServiceResponse<EmptyResponse>
                 {
                     ErrorMessage = ex.Message,
                     IsSuccess = false
