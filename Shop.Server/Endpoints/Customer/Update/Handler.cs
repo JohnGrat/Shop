@@ -1,9 +1,7 @@
 ﻿using FastEndpoints;
 using MediatR;
-using Shop.Application.Commands.CreateCustomer;
 using Shop.Application.Commands.UpdateCustomer;
 using Shop.Server.DataTransferContracts;
-using Shop.Shared.DTOs;
 
 namespace Shop.Server.Endpoints.Customer.Update
 {

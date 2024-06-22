@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Options;
 using Shop.Application.ReadModels;
 using Shop.Infrastructure.Settings;
-using System.Security;
-using System.Text.RegularExpressions;
 
 
 namespace Shop.Infrastructure.Persistence.SqlDb
@@ -13,6 +11,8 @@ namespace Shop.Infrastructure.Persistence.SqlDb
         private readonly IOptions<DatabaseSettings> _databaseSettings;
 
         public DbSet<CustomerReadModel> Customers { get; set; }
+
+        public DbSet<ProductReadModel> Products { get; set; }
 
         public SqlDbContext(IOptions<DatabaseSettings> databaseSettings)
         {
