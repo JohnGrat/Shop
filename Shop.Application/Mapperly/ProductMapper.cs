@@ -10,10 +10,10 @@ namespace Shop.Application.Mapperly
     [Mapper]
     public static partial class ProductMapper
     {
-        public static partial ProductDTO ToDTO(ProductReadModel customer);
-        public static partial ProductDTO ToDTO(CreateProductCommand customer);
-        public static partial ProductReadModel ToDTO(ProductDTO customer);
-        public static partial ProductReadModel ToDTO(ProductCreatedEvent customer);
-        public static partial ProductReadModel ToDTO(ProductUpdatedEvent customer);
+        public static partial ProductDTO ToDTO(ProductReadModel product);
+        public static partial ProductDTO ToDTO(CreateProductCommand product);
+        public static partial ProductReadModel ToDTO(ProductDTO product);
+        public static partial ProductReadModel ToDTO(ProductCreatedEvent product);
+        public static partial ProductReadModel ToDTO(ProductUpdatedEvent product);
     }
 }
