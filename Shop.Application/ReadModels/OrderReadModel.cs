@@ -1,4 +1,4 @@
-﻿using Shop.Domain.Aggregates.OrderAggregate;
+﻿using Shop.Shared.Enums;
 
 namespace Shop.Application.ReadModels
 {
@@ -28,6 +28,7 @@ namespace Shop.Application.ReadModels
     public class OrderItemReadModel
     {
         public Guid ProductId { get; set; }
+        public Guid OrderId { get; set; }
 
         public string ProductName { get; set; } = default!;
 
