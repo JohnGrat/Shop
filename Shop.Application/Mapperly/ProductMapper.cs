@@ -1,4 +1,4 @@
-﻿using Riok.Mapperly.Abstractions;
+using Riok.Mapperly.Abstractions;
 using Shop.Application.Commands.CreateProduct;
 using Shop.Application.ReadModels;
 using Shop.Domain.Events;
