@@ -8,8 +8,8 @@ namespace Shop.Domain.Repositories.Interfaces
         Task<bool> AnyAsync<T>() where T : class;
         Task DeleteAsync<T>(Guid id) where T : class;
         Task<IEnumerable<T>> FindAllAsync<T>(Expression<Func<T, bool>> predicate) where T : class;
-        Task<IEnumerable<T>> GetAllAsync<T>() where T : class;
-        Task<T> GetByIdAsync<T>(Guid id) where T : class;
+        Task<IEnumerable<T>> GetAllAsync<T>(params string[] includes) where T : class;
+        Task<T> GetByIdAsync<T>(Guid id, params string[] includes) where T : class;
         Task InsertAsync<T>(T entity) where T : class;
         Task UpdateAsync<T>(Guid id, T entity) where T : class;
     }

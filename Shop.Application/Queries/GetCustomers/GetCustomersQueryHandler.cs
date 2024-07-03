@@ -4,7 +4,6 @@ using Shop.Application.ReadModels;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Shared.DTOs;
 
-
 namespace Shop.Application.Queries.GetCustomers
 {
     public class GetCustomersQueryHandler : IRequestHandler<GetCustomersQuery, IEnumerable<CustomerDTO>>

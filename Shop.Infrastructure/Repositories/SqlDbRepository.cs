@@ -34,14 +34,24 @@ namespace Shop.Infrastructure.Repositories
             return await _dbContext.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync<T>() where T : class
+        public async Task<IEnumerable<T>> GetAllAsync<T>(params string[] includes) where T : class
         {
-            return await _dbContext.Set<T>().ToListAsync();
+            var query = _dbContext.Set<T>().AsQueryable();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+            return await query.ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync<T>(Guid id) where T : class
+        public async Task<T> GetByIdAsync<T>(Guid id, params string[] includes) where T : class
         {
-            return await _dbContext.Set<T>().FindAsync(id);
+            var query = _dbContext.Set<T>().AsQueryable();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+            return await query.FirstOrDefaultAsync(entity => EF.Property<Guid>(entity, "Id") == id);
         }
 
         public async Task InsertAsync<T>(T entity) where T : class
