@@ -24,5 +24,13 @@ namespace Shop.Infrastructure.Persistence.SqlDb
         {
             optionsBuilder.UseInMemoryDatabase(_databaseSettings.Value.SqlDbDatabaseName);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<OrderItemReadModel>()
+                .HasKey(oi => new { oi.OrderId, oi.ProductId });
+
+        }
     }
 }

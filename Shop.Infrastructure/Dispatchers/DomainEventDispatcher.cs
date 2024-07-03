@@ -15,7 +15,6 @@ namespace Shop.Infrastructure.Dispatchers
 
         public async Task DispatchEventsAsync<T>(T aggregate) where T : AggregateRoot
         {
-            var i = aggregate.GetDomainEvents().Count();
             foreach (var domainEvent in aggregate.GetDomainEvents())
             {
                 await _mediator.Publish(domainEvent);

@@ -12,5 +12,6 @@ namespace Shop.Application.Mapperly
     {
         public static partial OrderDTO ToDTO(CreateOrderCommand order);
         public static partial OrderReadModel ToDTO(OrderCreatedEvent order);
+        public static partial OrderDTO ToDTO(OrderReadModel order);
     }
 }
