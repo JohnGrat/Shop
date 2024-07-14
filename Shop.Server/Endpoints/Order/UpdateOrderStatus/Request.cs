@@ -1,7 +1,7 @@
-﻿using FastEndpoints;
+﻿using Shop.Shared.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Shop.Server.Endpoints.Customer.Update
+namespace Shop.Server.Endpoints.Order.UpdateOrderStatus
 {
     public class Request
     {
@@ -9,7 +9,6 @@ namespace Shop.Server.Endpoints.Customer.Update
         public Guid Id { get; set; }
 
         [Required]
-        [StringLength(200)]
-        public string Name { get; set; } = default!;
+        public OrderStatus OrderStatus { get; set; }
     }
 }
