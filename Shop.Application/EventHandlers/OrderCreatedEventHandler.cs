@@ -3,7 +3,6 @@ using Shop.Application.Mapperly;
 using Shop.Application.ReadModels;
 using Shop.Domain.Events;
 using Shop.Domain.Repositories.Interfaces;
-using Shop.Shared.Enums;
 
 namespace Shop.Application.EventHandlers
 {

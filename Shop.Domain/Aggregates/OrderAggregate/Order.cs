@@ -107,4 +107,6 @@ namespace Shop.Domain.Aggregates.OrderAggregate
             OrderStatus = @event.OrderStatus;
         }
     }
+
+    public record Address(string City, string Street);
 }

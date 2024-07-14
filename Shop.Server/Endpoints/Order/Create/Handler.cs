@@ -1,6 +1,5 @@
 ﻿using FastEndpoints;
 using MediatR;
-using Shop.Application.Commands.CreateCustomer;
 using Shop.Application.Commands.CreateOrder;
 using Shop.Application.Mapperly;
 using Shop.Application.Queries.GetProductById;
