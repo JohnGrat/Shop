@@ -9,7 +9,7 @@ namespace Shop.Server.Endpoints.Order.UpdateOrderStatus
     {
         public override void Configure()
         {
-            Patch("/api/v1/orders/{orderId}/status");
+            Patch("/api/v1/orders/{id}/status");
             AllowAnonymous();
         }
 
